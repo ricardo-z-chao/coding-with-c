@@ -6,10 +6,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
-include(cmake/scripts/dependencies.cmake)
-include(cmake/scripts/format.cmake)
-
-find_package(Uthash REQUIRED)
+include(${CMAKE_SOURCE_DIR}/cmake/scripts/format.cmake)
 
 format_source(src test)
-add_subdirectory(src bin)
+
+enable_testing()
+
+add_subdirectory(src)
+add_subdirectory(test)
