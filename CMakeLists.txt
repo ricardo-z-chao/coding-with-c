@@ -10,3 +10,6 @@ include(cmake/scripts/dependencies.cmake)
 include(cmake/scripts/format.cmake)
 
 find_package(Uthash REQUIRED)
+
+format_source(src test)
+add_subdirectory(src bin)
