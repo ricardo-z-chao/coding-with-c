@@ -12,5 +12,8 @@ format_source(src test)
 
 enable_testing()
 
+option(BUILD_TWO_SUM "build and test leetcode-1" ON)
+option(INSTALL_GTEST OFF)
+
 add_subdirectory(src)
 add_subdirectory(test)
