@@ -8,12 +8,15 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
 include(${CMAKE_SOURCE_DIR}/cmake/scripts/format.cmake)
 
-format_source(src test)
+format_source()
+format_cmake_file()
+
+# dont't install gtest when installing the project
+option(INSTALL_GTEST OFF)
 
 enable_testing()
 
-option(BUILD_TWO_SUM "build and test leetcode-1" ON)
-option(INSTALL_GTEST OFF)
-
 add_subdirectory(src)
 add_subdirectory(test)
+
+include(CPack)
