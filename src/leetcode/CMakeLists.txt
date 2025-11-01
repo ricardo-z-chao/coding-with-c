@@ -24,35 +24,9 @@ set_target_properties(merge_sorted_array
 # define install location of library
 set(LIB_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
 
-# install export set for the two_sum library
-export(
-  TARGETS two_sum
-  FILE "${CMAKE_BINARY_DIR}/TwoSumTargets.cmake"
-  NAMESPACE leetcode::)
-install(
-  TARGETS two_sum
-  EXPORT TwoSumTargets
-  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/leetcode)
-install(
-  EXPORT TwoSumTargets
-  NAMESPACE leetcode::
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/leetcode)
-
-# install export set for the merge_sorted_array library
-export(
-  TARGETS merge_sorted_array
-  FILE "${CMAKE_BINARY_DIR}/MergeSortedArrayTargets.cmake"
-  NAMESPACE leetcode::)
-install(
-  TARGETS merge_sorted_array
-  EXPORT MergeSortedArrayTargets
-  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/leetcode)
-install(
-  EXPORT MergeSortedArrayTargets
-  NAMESPACE leetcode::
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/leetcode)
+# install and export target
+export_and_install_targets(two_sum)
+export_and_install_targets(merge_sorted_array)
 
 # install and version config file for the package
 configure_package_config_file(
