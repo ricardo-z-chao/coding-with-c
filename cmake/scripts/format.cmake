@@ -1,3 +1,5 @@
+include_guard()
+
 function(format_source)
   find_program(CLANG_FORMAT_PATH clang-format REQUIRED)
   set(PATTERNS)
