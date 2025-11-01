@@ -2,5 +2,6 @@
 
 set_and_check(LEET_CODE_LIB_DIR "@PACKAGE_LIB_INSTALL_DIR@")
 include("${LEET_CODE_LIB_DIR}/cmake/leetcode/TwoSumTargets.cmake")
+include("${LEET_CODE_LIB_DIR}/cmake/leetcode/MergeSortedArrayTargets.cmake")
 
 check_required_components(LeetCode)
