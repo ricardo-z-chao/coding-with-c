@@ -14,9 +14,11 @@ format_cmake_file()
 # dont't install gtest when installing the project
 option(INSTALL_GTEST OFF)
 
-enable_testing()
+include(CTest)
 
 add_subdirectory(src)
-add_subdirectory(test)
+if(BUILD_TESTING)
+  add_subdirectory(test)
+endif()
 
 include(CPack)
