@@ -21,4 +21,7 @@ if(BUILD_TESTING)
   add_subdirectory(test)
 endif()
 
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set(CPACK_GENERATOR "ZIP")
+set(CPACK_SOURCE_GENERATOR "ZIP")
 include(CPack)
