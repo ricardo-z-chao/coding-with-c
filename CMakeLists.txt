@@ -16,7 +16,7 @@ option(INSTALL_GTEST OFF)
 
 include(CTest)
 
-add_subdirectory(src)
+add_subdirectory(src bin)
 if(BUILD_TESTING)
   add_subdirectory(test)
 endif()
