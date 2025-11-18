@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <vector>
 extern "C" {
 #include "two_sum.h"
 }
