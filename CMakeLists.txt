@@ -11,9 +11,6 @@ include(${CMAKE_SOURCE_DIR}/cmake/scripts/format.cmake)
 format_source()
 format_cmake_file()
 
-# dont't install gtest when installing the project
-option(INSTALL_GTEST OFF)
-
 include(CTest)
 
 add_subdirectory(src bin)
