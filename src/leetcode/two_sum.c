@@ -2,7 +2,7 @@
 
 /**
  * @brief leetcode 1. Two Sum
- *
+ * @link https://leetcode.com/problems/two-sum/
  * @param[in] nums input array
  * @param[in] numsSize array size
  * @param[in] target target sum
