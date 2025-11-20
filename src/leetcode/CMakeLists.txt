@@ -4,7 +4,6 @@ include(CMakePackageConfigHelpers)
 
 find_package(Uthash REQUIRED)
 
-# Create the two_sum library
 add_library(two_sum two_sum.c)
 target_include_directories(
   two_sum INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
@@ -12,7 +11,6 @@ target_include_directories(
 target_link_libraries(two_sum PRIVATE Uthash)
 set_target_properties(two_sum PROPERTIES PUBLIC_HEADER include/two_sum.h)
 
-# Create the merge_sorted_arrays library
 add_library(merge_sorted_array merge_sorted_array.c)
 target_include_directories(
   merge_sorted_array
@@ -21,12 +19,21 @@ target_include_directories(
 set_target_properties(merge_sorted_array
                       PROPERTIES PUBLIC_HEADER include/merge_sorted_array.h)
 
+add_library(three_sum_closest three_sum_closest.c)
+target_include_directories(
+  three_sum_closest
+  INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+            "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>/leetcode>")
+set_target_properties(three_sum_closest PROPERTIES PUBLIC_HEADER
+                                                   include/three_sum_closest.h)
+
 # define install location of library
 set(LIB_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
 
 # install and export target
 export_and_install_targets(two_sum)
 export_and_install_targets(merge_sorted_array)
+export_and_install_targets(three_sum_closest)
 
 # install and version config file for the package
 configure_package_config_file(
