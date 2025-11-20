@@ -16,3 +16,9 @@ Using cpplint for code linting (install via `pip install cpplint`).
 
 - Uthash 2.3.0
 - GoogleTest 1.17.0
+
+# Completed Problems
+
+- [x] [leetcode-1](https://leetcode.com/problems/two-sum/)
+- [x] [leetcode-16](https://leetcode.com/problems/3sum-closest/)
+- [x] [leetcode-88](https://leetcode.com/problems/merge-sorted-array/)
