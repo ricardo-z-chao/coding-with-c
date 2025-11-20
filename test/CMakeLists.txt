@@ -9,3 +9,8 @@ add_executable(merge_sorted_array_test merge_sorted_array_test.cpp)
 target_link_libraries(merge_sorted_array_test PRIVATE merge_sorted_array
                                                       GTest::gtest_main)
 gtest_discover_tests(merge_sorted_array_test)
+
+add_executable(three_sum_closest_test three_sum_closest_test.cpp)
+target_link_libraries(three_sum_closest_test PRIVATE three_sum_closest
+                                                     GTest::gtest_main)
+gtest_discover_tests(three_sum_closest_test)
