@@ -13,7 +13,7 @@ function(format_source)
 
   add_custom_target(
     format-source ALL
-    COMMAND ${CLANG_FORMAT_PATH} -i --verbose --style=LLVM ${SOURCE_FILES}
+    COMMAND ${CLANG_FORMAT_PATH} -i --verbose ${SOURCE_FILES}
     COMMAND_EXPAND_LISTS
     COMMENT "formatting all source code"
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
