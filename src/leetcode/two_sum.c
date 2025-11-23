@@ -8,25 +8,25 @@
  * @param[in] target target sum
  * @param[out] returnSize result array size
  */
-int *twoSum(int *nums, int numsSize, int target, int *returnSize) {
+int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
   typedef struct {
     int key;
     int value;
     UT_hash_handle hh;
   } HashTable;
-  HashTable *hashTable = NULL;
+  HashTable* hashTable = NULL;
   for (unsigned int i = 0; i < numsSize; i++) {
-    HashTable *entry;
+    HashTable* entry;
     int key = target - nums[i];
     HASH_FIND_INT(hashTable, &key, entry);
     if (entry != NULL) {
-      int *result = (int *)malloc(sizeof(int) * 2);
+      int* result = (int*)malloc(sizeof(int) * 2);
       result[0] = entry->value;
       result[1] = i;
       *returnSize = 2;
       return result;
     } else {
-      HashTable *entry = malloc(sizeof(HashTable));
+      HashTable* entry = malloc(sizeof(HashTable));
       entry->key = nums[i];
       entry->value = i;
       HASH_ADD_INT(hashTable, key, entry);

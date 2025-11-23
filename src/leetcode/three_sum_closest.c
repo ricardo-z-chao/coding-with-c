@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-int compare(const void *, const void *);
+int compare(const void*, const void*);
 
 /**
  * @brief leetcode 16. 3Sum Closest
@@ -10,7 +10,7 @@ int compare(const void *, const void *);
  * @param[in] target target sum
  * @return closest sum
  */
-int threeSumClosest(int *nums, int numsSize, int target) {
+int threeSumClosest(int* nums, int numsSize, int target) {
   qsort(nums, numsSize, sizeof(int), compare);
   int closest = nums[0] + nums[1] + nums[2];
   int gap = abs(closest - target);
@@ -53,4 +53,4 @@ int threeSumClosest(int *nums, int numsSize, int target) {
  * @param[in] b second element
  * @return negative if a < b, zero if a == b, positive if a > b
  */
-int compare(const void *a, const void *b) { return *(int *)a - *(int *)b; }
+int compare(const void* a, const void* b) { return *(int*)a - *(int*)b; }
